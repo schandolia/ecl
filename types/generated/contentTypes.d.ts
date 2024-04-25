@@ -821,13 +821,12 @@ export interface ApiAgeGroupAgeGroup extends Schema.CollectionType {
   };
 }
 
-export interface ApiDevelopmentAreaDevelopmentArea
-  extends Schema.CollectionType {
-  collectionName: 'development_areas';
+export interface ApiDevAreaDevArea extends Schema.CollectionType {
+  collectionName: 'dev_areas';
   info: {
-    singularName: 'development-area';
-    pluralName: 'development-areas';
-    displayName: 'DevelopmentArea';
+    singularName: 'dev-area';
+    pluralName: 'dev-areas';
+    displayName: 'DevArea';
   };
   options: {
     draftAndPublish: true;
@@ -839,13 +838,13 @@ export interface ApiDevelopmentAreaDevelopmentArea
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::development-area.development-area',
+      'api::dev-area.dev-area',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::development-area.development-area',
+      'api::dev-area.dev-area',
       'oneToOne',
       'admin::user'
     > &
@@ -853,13 +852,12 @@ export interface ApiDevelopmentAreaDevelopmentArea
   };
 }
 
-export interface ApiDevelopmentCategoryDevelopmentCategory
-  extends Schema.CollectionType {
-  collectionName: 'development_categories';
+export interface ApiDevCategoryDevCategory extends Schema.CollectionType {
+  collectionName: 'dev_categories';
   info: {
-    singularName: 'development-category';
-    pluralName: 'development-categories';
-    displayName: 'DevelopmentCategory';
+    singularName: 'dev-category';
+    pluralName: 'dev-categories';
+    displayName: 'DevCategory';
     description: '';
   };
   options: {
@@ -868,22 +866,22 @@ export interface ApiDevelopmentCategoryDevelopmentCategory
   attributes: {
     name: Attribute.String;
     description: Attribute.Text;
-    development_area: Attribute.Relation<
-      'api::development-category.development-category',
+    dev_area: Attribute.Relation<
+      'api::dev-category.dev-category',
       'oneToOne',
-      'api::development-area.development-area'
+      'api::dev-area.dev-area'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::development-category.development-category',
+      'api::dev-category.dev-category',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::development-category.development-category',
+      'api::dev-category.dev-category',
       'oneToOne',
       'admin::user'
     > &
@@ -891,23 +889,23 @@ export interface ApiDevelopmentCategoryDevelopmentCategory
   };
 }
 
-export interface ApiDevelopmentIndicatorQuestionDevelopmentIndicatorQuestion
+export interface ApiDevIndicatorQuestionDevIndicatorQuestion
   extends Schema.CollectionType {
-  collectionName: 'development_indicator_questions';
+  collectionName: 'dev_indicator_questions';
   info: {
-    singularName: 'development-indicator-question';
-    pluralName: 'development-indicator-questions';
-    displayName: 'DevelopmentIndicatorQuestion';
+    singularName: 'dev-indicator-question';
+    pluralName: 'dev-indicator-questions';
+    displayName: 'DevIndicatorQuestion';
     description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    key_development_indicator: Attribute.Relation<
-      'api::development-indicator-question.development-indicator-question',
+    key_dev_indicator: Attribute.Relation<
+      'api::dev-indicator-question.dev-indicator-question',
       'oneToOne',
-      'api::key-development-indicator.key-development-indicator'
+      'api::key-dev-indicator.key-dev-indicator'
     >;
     text: Attribute.String;
     type: Attribute.Enumeration<['yes_no', 'always_never']>;
@@ -915,13 +913,13 @@ export interface ApiDevelopmentIndicatorQuestionDevelopmentIndicatorQuestion
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::development-indicator-question.development-indicator-question',
+      'api::dev-indicator-question.dev-indicator-question',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::development-indicator-question.development-indicator-question',
+      'api::dev-indicator-question.dev-indicator-question',
       'oneToOne',
       'admin::user'
     > &
@@ -929,42 +927,42 @@ export interface ApiDevelopmentIndicatorQuestionDevelopmentIndicatorQuestion
   };
 }
 
-export interface ApiKeyDevelopmentIndicatorKeyDevelopmentIndicator
+export interface ApiKeyDevIndicatorKeyDevIndicator
   extends Schema.CollectionType {
-  collectionName: 'key_development_indicators';
+  collectionName: 'key_dev_indicators';
   info: {
-    singularName: 'key-development-indicator';
-    pluralName: 'key-development-indicators';
-    displayName: 'KeyDevelopmentIndicator';
+    singularName: 'key-dev-indicator';
+    pluralName: 'key-dev-indicators';
+    displayName: 'KeyDevIndicator';
     description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    development_category: Attribute.Relation<
-      'api::key-development-indicator.key-development-indicator',
+    dev_category: Attribute.Relation<
+      'api::key-dev-indicator.key-dev-indicator',
       'oneToOne',
-      'api::development-category.development-category'
+      'api::dev-category.dev-category'
     >;
     age_group: Attribute.Relation<
-      'api::key-development-indicator.key-development-indicator',
+      'api::key-dev-indicator.key-dev-indicator',
       'oneToOne',
       'api::age-group.age-group'
     >;
     description: Attribute.Text;
-    impact_on_development_out_of_hundred: Attribute.Integer;
+    impact_on_dev_out_of_hundred: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::key-development-indicator.key-development-indicator',
+      'api::key-dev-indicator.key-dev-indicator',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::key-development-indicator.key-development-indicator',
+      'api::key-dev-indicator.key-dev-indicator',
       'oneToOne',
       'admin::user'
     > &
@@ -986,10 +984,10 @@ export interface ApiLearningDomainLearningDomain extends Schema.CollectionType {
   attributes: {
     name: Attribute.String;
     description: Attribute.Text;
-    development_area: Attribute.Relation<
+    dev_area: Attribute.Relation<
       'api::learning-domain.learning-domain',
       'oneToOne',
-      'api::development-area.development-area'
+      'api::dev-area.dev-area'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -1028,10 +1026,10 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::age-group.age-group': ApiAgeGroupAgeGroup;
-      'api::development-area.development-area': ApiDevelopmentAreaDevelopmentArea;
-      'api::development-category.development-category': ApiDevelopmentCategoryDevelopmentCategory;
-      'api::development-indicator-question.development-indicator-question': ApiDevelopmentIndicatorQuestionDevelopmentIndicatorQuestion;
-      'api::key-development-indicator.key-development-indicator': ApiKeyDevelopmentIndicatorKeyDevelopmentIndicator;
+      'api::dev-area.dev-area': ApiDevAreaDevArea;
+      'api::dev-category.dev-category': ApiDevCategoryDevCategory;
+      'api::dev-indicator-question.dev-indicator-question': ApiDevIndicatorQuestionDevIndicatorQuestion;
+      'api::key-dev-indicator.key-dev-indicator': ApiKeyDevIndicatorKeyDevIndicator;
       'api::learning-domain.learning-domain': ApiLearningDomainLearningDomain;
     }
   }

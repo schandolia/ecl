@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "learning_domains",
+  "collectionName": "dev_categories",
   "info": {
-    "singularName": "learning-domain",
-    "pluralName": "learning-domains",
-    "displayName": "LearningDomain",
+    "singularName": "dev-category",
+    "pluralName": "dev-categories",
+    "displayName": "DevCategory",
     "description": ""
   },
   "options": {

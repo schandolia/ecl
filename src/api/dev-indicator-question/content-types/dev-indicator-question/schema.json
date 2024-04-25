@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dev_indicator_questions",
+  "info": {
+    "singularName": "dev-indicator-question",
+    "pluralName": "dev-indicator-questions",
+    "displayName": "DevIndicatorQuestion",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "key_dev_indicator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::key-dev-indicator.key-dev-indicator"
+    },
+    "text": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "yes_no",
+        "always_never"
+      ]
+    }
+  }
+}

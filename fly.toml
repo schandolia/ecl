@@ -1,0 +1,33 @@
+# fly.toml app configuration file generated for ecl on 2024-04-24T18:45:48+05:30
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'ecl'
+primary_region = 'ams'
+
+[build]
+
+[http_service]
+  internal_port = 1337
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
+
+[env]
+  APP_KEYS = "zEBX2qvD+psRNCPW3uUP3Q==,I027K7mRoG/nQ5ZDgcegRw==,lfr7ZqhpAHKhQG+ROa0UAw==,B3E0SSAyVrsjKVQhHhsaWw=="
+  API_TOKEN_SALT = "pDU97oSxQywm5KROB9tfwA=="
+  ADMIN_JWT_SECRET = "k1osnUfPnknRK8xG/ErNqA=="
+  JWT_SECRET = "DXgeLLLANJwAB+34phhpjA=="
+  TRANSFER_TOKEN_SALT = "1CB5lAnGPgFHkrkEQkbFcA=="
+  DATABASE_CLIENT = "postgres"
+  DATABASE_URL = "postgres://ecl:hWtW9oUNM7p9HEo@eclpostgres.flycast:5432/ecl?sslmode=disable"
+
+
